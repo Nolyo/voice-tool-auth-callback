@@ -1,0 +1,56 @@
+:root {
+  color-scheme: light dark;
+  --bg: #ffffff;
+  --fg: #1a1a1a;
+  --muted: #666;
+  --accent: #4338ca;
+  --accent-hover: #3730a3;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #111111;
+    --fg: #f5f5f5;
+    --muted: #999;
+    --accent: #818cf8;
+    --accent-hover: #a5b4fc;
+  }
+}
+* { box-sizing: border-box; }
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+.card {
+  max-width: 420px;
+  padding: 32px;
+  text-align: center;
+}
+h1 { font-size: 28px; margin: 0 0 16px; }
+p { font-size: 16px; margin: 0 0 16px; color: var(--muted); }
+.small { font-size: 13px; }
+button, a#download-link {
+  display: inline-block;
+  padding: 10px 18px;
+  margin: 4px;
+  font-size: 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  cursor: pointer;
+  border: 0;
+}
+button {
+  background: var(--accent);
+  color: white;
+}
+button:hover { background: var(--accent-hover); }
+a#download-link {
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+}
