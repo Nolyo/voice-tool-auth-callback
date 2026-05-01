@@ -59,13 +59,13 @@
     ['access_token', 'refresh_token', 'token', 'token_hash', 'code', 'state', 'expires_in', 'expires_at'].forEach(function (k) {
       if (params[k]) deepLinkParams.set(k, params[k]);
     });
-    deepLink = 'voice-tool://auth/callback?' + deepLinkParams.toString();
+    deepLink = 'lexena://auth/callback?' + deepLinkParams.toString();
   }
 
   function triggerDeepLink() {
     if (!deepLink) {
       // Fallback: open the GitHub release page so the user can install the app.
-      window.open('https://github.com/Nolyo/voice-tool/releases/latest', '_blank');
+      window.open('https://github.com/Nolyo/lexena/releases/latest', '_blank');
       return;
     }
     var iframe = document.createElement('iframe');
@@ -81,10 +81,10 @@
   retryBtn.addEventListener('click', triggerDeepLink);
 
   if (deepLink) {
-    show('Opening Voice Tool…');
+    show('Opening Lexena…');
     triggerDeepLink();
     setTimeout(function () {
-      show('If Voice Tool did not open automatically:');
+      show('If Lexena did not open automatically:');
       revealActions();
     }, 2000);
   } else {
